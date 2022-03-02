@@ -19,17 +19,27 @@ export class Usuario {
 
     http://localhost:3000/api/upload/usuario/no-image
 
-    
-
-    if (this.img&&this.img.includes('https')) {
+    if (!this.img) {
+      return `${base_url}/upload/usuarios/no-image`;
+    } else if (this.img.includes('https')){
       return this.img;
-     }
-
-    if (this.img) {
+    } else if (this.img) {
       return `${base_url}/upload/usuarios/${this.img}`;
     } else {
       return `${base_url}/upload/usuarios/no-image`;
     }
+
+
+
+    // if (this.img&&this.img.includes('https')) {
+    //   return this.img;
+    //  }
+
+    // if (this.img) {
+    //   return `${base_url}/upload/usuarios/${this.img}`;
+    // } else {
+    //   return `${base_url}/upload/usuarios/no-image`;
+    // }
 
 
   }
